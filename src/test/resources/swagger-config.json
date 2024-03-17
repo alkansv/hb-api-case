@@ -1,0 +1,56 @@
+{
+  "spec": {
+    "swagger": "2.0",
+    "info": {
+      "title": "Hepsiburada Product API",
+      "version": "1.0.0"
+    },
+    "basePath": "/v2",
+    "paths": {
+      "/products": {
+        "post": {
+          "parameters": [
+            {
+              "name": "product",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Product"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "photoUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "options": {
+    "language": "java",
+    "serverPort": "8080"
+  },
+  "swaggerUrl": "http://hepsiburada.swagger.io/v2/swagger.json"
+}
